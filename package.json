@@ -1,12 +1,13 @@
 {
-  "name": "cokokoro",
+  "name": "kokoro",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --turbopack -p 5173",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check": "tsc --noEmit"
   },
   "dependencies": {
     "react": "19.1.0",
