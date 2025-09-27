@@ -49,7 +49,7 @@ body {
   background: var(--accent);
 }
 
-/* Animation keyframes */
+/* Animation keyframes inspired by Alliance Vila Olímpia */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -69,6 +69,28 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -92,7 +114,47 @@ body {
   }
 }
 
-/* Animation classes */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroTextReveal {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes buttonBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Animation classes inspired by Alliance Vila Olímpia */
 .animate-fade-in {
   animation: fadeIn 0.8s ease-out forwards;
 }
@@ -107,6 +169,34 @@ body {
 
 .animate-slide-up-delay {
   animation: slideUp 0.6s ease-out 0.1s both;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+.animate-hero-text {
+  animation: heroTextReveal 1.2s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.8s ease-out forwards;
+}
+
+.animate-button-bounce {
+  animation: buttonBounce 0.3s ease;
 }
 
 .animate-fade-in-stagger {
@@ -148,7 +238,7 @@ body {
   padding: 0 1rem;
 }
 
-/* Subtle hover effects */
+/* Subtle hover effects inspired by Alliance Vila Olímpia */
 .hover-lift {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -156,6 +246,50 @@ body {
 .hover-lift:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px var(--shadow-hover);
+}
+
+.hero-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.hero-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.hero-button:hover::before {
+  left: 100%;
+}
+
+.hero-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.alliance-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-origin: center;
+}
+
+.alliance-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.image-parallax {
+  transition: transform 0.3s ease;
+}
+
+.image-parallax:hover {
+  transform: scale(1.05);
 }
 
 /* Focus states for accessibility */

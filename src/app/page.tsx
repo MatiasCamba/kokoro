@@ -1,4 +1,5 @@
 import Header from '@/components/Header'
+import Banner from '@/components/Banner'
 import Hero from '@/components/Hero'
 import Programs from '@/components/Programs'
 import Team from '@/components/Team'
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
+      <Banner />
       <Hero />
       <Programs />
       <Team />
