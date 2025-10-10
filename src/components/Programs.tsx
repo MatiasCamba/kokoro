@@ -1,7 +1,17 @@
 'use client'
 
-import { ScrollAnimation, StaggeredAnimation } from './ScrollAnimations'
+import dynamic from "next/dynamic"
 import Link from "next/link"
+
+
+const ScrollAnimation = dynamic(
+  () => import("./ScrollAnimations").then((mod) => mod.ScrollAnimation),
+  { ssr: false }
+)
+const StaggeredAnimation = dynamic(
+  () => import("./ScrollAnimations").then((mod) => mod.StaggeredAnimation),
+  { ssr: false }
+)
 
 export default function Programs() {
   const programs = [
