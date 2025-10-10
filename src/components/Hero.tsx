@@ -5,35 +5,34 @@ import { ScrollAnimation } from './ScrollAnimations'
 export default function Hero() {
   return (
     <section id="inicio" className="pt-16 bg-white relative overflow-hidden">
-      {/* Main hero content */}
+     
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-black mb-6 animate-hero-text leading-tight">
-            Transformá tu vida a través del
-            <span className="block text-gray-800 mt-2">movimiento y bienestar</span>
+            Veni y aprendé con los mejores
+            <span className="block text-gray-800 mt-2">Bjj y Lucha</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto animate-fade-in-delay leading-relaxed">
-            Descubrí tu potencial máximo con nuestros programas personalizados
-            de fitness y bienestar, desarrollados por profesionales especializados.
+            Descubrí tu potencial máximo, aprende con profesionales.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
               href="#programas"
               className="hero-button bg-black text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-gray-800 animate-slide-up"
             >
-              Conocé nuestros programas
+              Conocé nuestras clases
             </a>
             <a
               href="#contacto"
               className="hero-button border-2 border-black text-black px-8 py-4 rounded-lg text-lg font-medium hover:bg-black hover:text-white animate-slide-up-delay"
             >
-              Agendá una consulta
+              Agendá una clase
             </a>
           </div>
         </div>
       </div>
 
-      {/* Decorative background elements */}
+     
       <div className="absolute top-0 right-0 w-1/3 h-full opacity-5">
         <div className="w-full h-full bg-gradient-to-l from-black to-transparent"></div>
       </div>
@@ -41,7 +40,7 @@ export default function Hero() {
         <div className="w-full h-full bg-gradient-to-tr from-black to-transparent"></div>
       </div>
 
-      {/* Values section with Alliance-inspired animations */}
+      
       <div className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimation animation="fadeIn" threshold={0.2}>
@@ -60,8 +59,8 @@ export default function Hero() {
                     <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-black mb-2">Excelencia</h3>
-                <p className="text-gray-600">Compromiso con la calidad en cada entrenamiento y atención.</p>
+                <h3 className="text-xl font-semibold text-black mb-2">Disciplina</h3>
+                <p className="text-gray-600">Disciplina en cada entrenamiento.</p>
               </div>
             </ScrollAnimation>
 
@@ -73,7 +72,7 @@ export default function Hero() {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-black mb-2">Comunidad</h3>
-                <p className="text-gray-600">Construyendo relaciones duraderas y una red de apoyo.</p>
+                <p className="text-gray-600">Compitiendo con una red de apoyo.</p>
               </div>
             </ScrollAnimation>
 
@@ -85,7 +84,7 @@ export default function Hero() {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-black mb-2">Pasión</h3>
-                <p className="text-gray-600">Amor genuino por lo que hacemos y por los resultados de nuestros clientes.</p>
+                <p className="text-gray-600">Amor genuino por lo que hacemos.</p>
               </div>
             </ScrollAnimation>
           </div>

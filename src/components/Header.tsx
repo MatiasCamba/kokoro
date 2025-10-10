@@ -18,8 +18,8 @@ export default function Header() {
               <a href="#inicio" className="text-black hover:text-white hover:bg-black px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg transform hover:scale-105">
                 Inicio
               </a>
-              <a href="#programas" className="text-black hover:text-white hover:bg-black px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg transform hover:scale-105">
-                Programas
+              <a href="#clases" className="text-black hover:text-white hover:bg-black px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg transform hover:scale-105">
+                Clases
               </a>
               <a href="#equipo" className="text-black hover:text-white hover:bg-black px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg transform hover:scale-105">
                 Equipo
@@ -35,7 +35,7 @@ export default function Header() {
 
           <div className="hidden md:flex items-center space-x-3">
             <a
-              href="https://wa.me/5511999999999"
+              href="https://wa.me/1149982441"
               className="bg-green-600 hover:bg-green-700 text-white px-5 py-2.5 rounded-xl text-sm font-medium flex items-center space-x-2 transition-all duration-300 transform hover:scale-105 hover:shadow-lg active:scale-95"
               target="_blank"
               rel="noopener noreferrer"
@@ -46,7 +46,7 @@ export default function Header() {
               <span>WhatsApp</span>
             </a>
             <a
-              href="https://instagram.com/kokoro.fitness"
+              href="https://instagram.com/kokorobuenosaires"
               className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-5 py-2.5 rounded-xl text-sm font-medium flex items-center space-x-2 transition-all duration-300 transform hover:scale-105 hover:shadow-lg active:scale-95"
               target="_blank"
               rel="noopener noreferrer"
@@ -78,8 +78,8 @@ export default function Header() {
             <a href="#inicio" className="text-black hover:text-gray-600 block px-3 py-2 text-base font-medium transition-colors duration-300">
               Inicio
             </a>
-            <a href="#programas" className="text-black hover:text-gray-600 block px-3 py-2 text-base font-medium transition-colors duration-300">
-              Programas
+            <a href="#clases" className="text-black hover:text-gray-600 block px-3 py-2 text-base font-medium transition-colors duration-300">
+              Clases
             </a>
             <a href="#equipo" className="text-black hover:text-gray-600 block px-3 py-2 text-base font-medium transition-colors duration-300">
               Equipo
@@ -92,7 +92,7 @@ export default function Header() {
             </a>
             <div className="px-3 pt-4 pb-2 space-y-2">
               <a
-                href="https://wa.me/5511999999999"
+                href="https://wa.me/1149982441"
                 className="bg-green-600 hover:bg-green-700 text-white flex items-center justify-center space-x-2 px-3 py-2 text-base font-medium rounded-lg transition-all duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -103,7 +103,7 @@ export default function Header() {
                 <span>WhatsApp</span>
               </a>
               <a
-                href="https://instagram.com/kokoro.fitness"
+                href="https://instagram.com/kokorobuenosaires"
                 className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white flex items-center justify-center space-x-2 px-3 py-2 text-base font-medium rounded-lg transition-all duration-300"
                 target="_blank"
                 rel="noopener noreferrer"

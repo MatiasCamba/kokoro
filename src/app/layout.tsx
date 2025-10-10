@@ -19,8 +19,8 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "Kokoro - Transformá tu vida a través del movimiento",
-  description: "Descubrí tu potencial máximo con nuestros programas personalizados de fitness y bienestar, desarrollados por profesionales especializados.",
+  title: "Kokoro - Aprende a competir",
+  description: "Entrena con los mejores.",
 };
 
 export default function RootLayout({

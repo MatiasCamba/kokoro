@@ -14,23 +14,24 @@ interface BannerSlide {
 const bannerSlides: BannerSlide[] = [
   {
     id: 1,
-    title: "Transformá tu vida a través del movimiento",
-    subtitle: "Descubrí tu potencial máximo con nuestros programas personalizados de fitness y bienestar",
-    buttonText: "Empezá tu transformación",
-    buttonLink: "#programas",
+    title: "El dojo que necesitas",
+    subtitle: "Clases todos los días",
+    buttonText: "Anotate",
+    buttonLink: "#contacto",
   },
   {
     id: 2,
-    title: "Entrenamiento personalizado para todos los niveles",
-    subtitle: "Desde principiantes hasta atletas avanzados, tenemos el programa perfecto para vos",
-    buttonText: "Ver programas",
-    buttonLink: "#programas",
+    title: "Entrenamiento para todos los niveles",
+    subtitle: "Desde principiantes hasta atletas avanzados",
+    buttonText: "Ver clases",
+    buttonLink: "#clases",
   },
   {
     id: 3,
-    title: "Comunidad que te inspira a crecer",
-    subtitle: "Formá parte de una familia comprometida con el crecimiento personal y el bienestar",
-    buttonText: "Conocé el equipo",
+    title: "Comunidad que acompaña",
+    subtitle:
+      "Formá parte de un equipo comprometido con el crecimiento personal y la sana competencia",
+    buttonText: "El equipo",
     buttonLink: "#equipo",
   },
 ];
@@ -44,7 +45,7 @@ export default function Banner() {
 
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % bannerSlides.length);
-    }, 5000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [isAutoPlaying]);
@@ -53,17 +54,15 @@ export default function Banner() {
     setCurrentSlide(index);
     setIsAutoPlaying(false);
 
-    setTimeout(() => setIsAutoPlaying(true), 10000);
+    setTimeout(() => setIsAutoPlaying(true), 8000);
   };
 
   return (
     <section className="relative h-screen flex items-center justify-center bg-black text-white overflow-hidden">
-      {/* Background overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-40 z-10" />
 
-      {/* Slides */}
       <div className="relative z-20 text-center max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {bannerSlides.map((slide, index) => (
+        {bannerSlides?.map((slide, index) => (
           <div
             key={slide.id}
             className={`transition-all duration-1000 ease-in-out ${
@@ -73,7 +72,9 @@ export default function Banner() {
             }`}
           >
             <div className="text-center">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-hero-text">{slide.title}</h1>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-hero-text">
+                {slide.title}
+              </h1>
               <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto opacity-90 animate-fade-in-delay">
                 {slide.subtitle}
               </p>
@@ -88,26 +89,28 @@ export default function Banner() {
         ))}
       </div>
 
-      {/* Slide indicators */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex space-x-3">
         {bannerSlides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentSlide ? "bg-white scale-125" : "bg-white bg-opacity-50 hover:bg-opacity-80"
+              index === currentSlide
+                ? "bg-white scale-125"
+                : "bg-white bg-opacity-50 hover:bg-opacity-80"
             }`}
             aria-label={`Ir al slide ${index + 1}`}
           />
         ))}
       </div>
 
-      {/* Progress bar */}
       <div className="absolute bottom-0 left-0 w-full h-1 bg-gray-600 z-30">
         <div
           className="h-full bg-white transition-all duration-300 ease-linear"
           style={{
-            width: isAutoPlaying ? `${((currentSlide + 1) / bannerSlides.length) * 100}%` : "0%",
+            width: isAutoPlaying
+              ? `${((currentSlide + 1) / bannerSlides.length) * 100}%`
+              : "0%",
           }}
         />
       </div>
