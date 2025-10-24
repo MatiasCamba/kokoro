@@ -1,18 +1,59 @@
 @import "tailwindcss";
 
 :root {
+  /* Base colors */
   --background: #ffffff;
   --foreground: #000000;
   --accent: #1a1a1a;
-  --gray-light: #f8f9fa;
-  --gray-medium: #6c757d;
-  --shadow: rgba(0, 0, 0, 0.1);
-  --shadow-hover: rgba(0, 0, 0, 0.15);
+
+  /* Shark palette - Grayscale tones */
+  --shark-50: #f6f6f6;
+  --shark-100: #e7e7e7;
+  --shark-200: #d1d1d1;
+  --shark-300: #b0b0b0;
+  --shark-400: #888888;
+  --shark-500: #6d6d6d;
+  --shark-600: #5d5d5d;
+  --shark-700: #4f4f4f;
+  --shark-800: #454545;
+  --shark-900: #3d3d3d;
+  --shark-950: #1f1f1f;
+
+  /* Japanese-inspired accent colors */
+  --crimson-red: #c41e3a;
+  --crimson-red-dark: #8b1538;
+  --ink-black: #1a1a1a;
+  --rice-white: #fafafa;
+  --bamboo-green: #3a5a40;
+  --zen-gray: #e5e5e5;
+
+  /* Functional colors */
+  --shadow: rgba(0, 0, 0, 0.08);
+  --shadow-hover: rgba(0, 0, 0, 0.16);
+  --shadow-strong: rgba(0, 0, 0, 0.24);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  /* Shark color tokens for Tailwind */
+  --color-shark-50: var(--shark-50);
+  --color-shark-100: var(--shark-100);
+  --color-shark-200: var(--shark-200);
+  --color-shark-300: var(--shark-300);
+  --color-shark-400: var(--shark-400);
+  --color-shark-500: var(--shark-500);
+  --color-shark-600: var(--shark-600);
+  --color-shark-700: var(--shark-700);
+  --color-shark-800: var(--shark-800);
+  --color-shark-900: var(--shark-900);
+  --color-shark-950: var(--shark-950);
+
+  /* Custom accent tokens */
+  --color-crimson: var(--crimson-red);
+  --color-crimson-dark: var(--crimson-red-dark);
+
   --font-sans: var(--font-noto-sans-jp), var(--font-geist-sans), system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-geist-mono);
 }

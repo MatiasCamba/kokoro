@@ -60,15 +60,16 @@ export default function Programs() {
   ]
 
   return (
-    <section id="programas" className="py-20 bg-white">
+    <section id="clases" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollAnimation animation="fadeIn" threshold={0.2}>
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-shark-950 mb-4">
               Clases
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Mañana · Tarde · Noche — encontrá tu estilo y nivel de entrenamiento.
+            <div className="w-20 h-1 bg-crimson mx-auto mb-6"></div>
+            <p className="text-xl text-shark-600 max-w-3xl mx-auto leading-relaxed">
+              Mañana · Tarde · Noche — encontrá tu estilo y nivel de entrenamiento
             </p>
           </div>
         </ScrollAnimation>
@@ -81,23 +82,23 @@ export default function Programs() {
           {programs.map((program, index) => (
             <div
               key={index}
-              className="alliance-card bg-gray-50 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100"
+              className="alliance-card bg-shark-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-shark-200 group hover:-translate-y-2"
             >
-              <div className="text-5xl mb-6 text-center">{program.icon}</div>
-              <h3 className="text-2xl font-semibold text-black mb-3 text-center">
+              <div className="text-5xl mb-6 text-center transform group-hover:scale-110 transition-transform duration-300">{program.icon}</div>
+              <h3 className="text-2xl font-bold text-shark-950 mb-3 text-center">
                 {program.title}
               </h3>
-              <p className="text-gray-600 mb-6 text-center leading-relaxed">
+              <p className="text-shark-600 mb-6 text-center leading-relaxed text-sm">
                 {program.description}
               </p>
               <ul className="space-y-3 mb-8">
                 {program.features.map((feature, featureIndex) => (
                   <li
                     key={featureIndex}
-                    className="flex items-center text-sm text-gray-700"
+                    className="flex items-center text-sm text-shark-700"
                   >
                     <svg
-                      className="w-5 h-5 text-green-500 mr-3 flex-shrink-0"
+                      className="w-5 h-5 text-crimson mr-3 flex-shrink-0"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -112,8 +113,8 @@ export default function Programs() {
                 ))}
               </ul>
              <Link href="/#contacto" className="block">
-                <button className="w-full bg-black text-white py-3 px-6 rounded-lg hover:bg-gray-800 font-medium transition-transform duration-300 hover:scale-105">
-                  Conoce más
+                <button className="w-full bg-shark-950 text-white py-3.5 px-6 rounded-xl hover:bg-crimson font-semibold transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg">
+                  Conocé más
                 </button>
               </Link>
             </div>
