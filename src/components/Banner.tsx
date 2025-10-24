@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 interface BannerSlide {
   id: number;
@@ -18,6 +19,7 @@ const bannerSlides: BannerSlide[] = [
     subtitle: "Clases todos los días",
     buttonText: "Anotate",
     buttonLink: "#contacto",
+    backgroundImage: "/Banner1200x720.jpg",
   },
   {
     id: 2,
@@ -25,6 +27,7 @@ const bannerSlides: BannerSlide[] = [
     subtitle: "Desde principiantes hasta atletas avanzados",
     buttonText: "Ver clases",
     buttonLink: "#clases",
+    backgroundImage: "/ImagenFondo.jpg",
   },
   {
     id: 3,
@@ -33,6 +36,7 @@ const bannerSlides: BannerSlide[] = [
       "Formá parte de un equipo comprometido con el crecimiento personal y la sana competencia",
     buttonText: "El equipo",
     buttonLink: "#equipo",
+    backgroundImage: "/Banner1200x720.jpg",
   },
 ];
 
@@ -58,8 +62,30 @@ export default function Banner() {
   };
 
   return (
-    <section className="relative h-screen flex items-center justify-center bg-black text-white overflow-hidden">
-      <div className="absolute inset-0 bg-black bg-opacity-40 z-10" />
+    <section id="inicio" className="relative h-screen flex items-center justify-center bg-shark-950 text-white overflow-hidden">
+      {/* Background images for each slide */}
+      {bannerSlides.map((slide, index) => (
+        <div
+          key={`bg-${slide.id}`}
+          className={`absolute inset-0 transition-opacity duration-1000 ${
+            index === currentSlide ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          {slide.backgroundImage && (
+            <Image
+              src={slide.backgroundImage}
+              alt=""
+              fill
+              className="object-cover"
+              priority={index === 0}
+              unoptimized
+            />
+          )}
+        </div>
+      ))}
+
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70 z-10" />
 
       <div className="relative z-20 text-center max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {bannerSlides?.map((slide, index) => (
@@ -72,15 +98,15 @@ export default function Banner() {
             }`}
           >
             <div className="text-center">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-hero-text">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-hero-text drop-shadow-2xl">
                 {slide.title}
               </h1>
-              <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto opacity-90 animate-fade-in-delay">
+              <p className="text-lg md:text-2xl mb-10 max-w-4xl mx-auto opacity-95 animate-fade-in-delay drop-shadow-lg leading-relaxed">
                 {slide.subtitle}
               </p>
               <a
                 href={slide.buttonLink}
-                className="hero-button inline-block bg-white text-black px-8 py-4 text-lg font-medium rounded-lg hover:bg-gray-100 animate-slide-up-delay"
+                className="hero-button inline-block bg-white text-shark-950 px-10 py-4 text-lg font-semibold rounded-lg hover:bg-shark-100 hover:scale-105 transform transition-all duration-300 shadow-2xl hover:shadow-white/20 animate-slide-up-delay"
               >
                 {slide.buttonText}
               </a>

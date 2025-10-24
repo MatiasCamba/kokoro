@@ -1,33 +1,59 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="bg-white shadow-sm fixed w-full top-0 z-50">
+    <header className="bg-white/95 shadow-md fixed w-full top-0 z-50 border-b border-shark-100 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-black tracking-wider">Kokoro</h1>
+        <div className="flex justify-between items-center h-20">
+          <div className="flex-shrink-0 flex items-center gap-3">
+            <Image
+              src="/ImagenLogoHeader.jpg"
+              alt="Kokoro Dojo Logo"
+              width={50}
+              height={50}
+              className="object-contain"
+              unoptimized
+            />
+            <h1 className="text-2xl md:text-3xl font-bold text-shark-950 tracking-wide font-noto-sans-jp">
+              Kokoro
+            </h1>
           </div>
 
-          <nav className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-2">
-              <a href="#inicio" className="text-black hover:text-white hover:bg-black px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg transform hover:scale-105">
+          <nav className="hidden md:block" aria-label="Navegación principal">
+            <div className="ml-10 flex items-baseline space-x-1">
+              <a
+                href="#inicio"
+                className="text-shark-900 hover:text-white hover:bg-shark-950 px-4 py-2.5 text-sm font-medium transition-all duration-300 rounded-lg transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-shark-800 focus:ring-offset-2"
+              >
                 Inicio
               </a>
-              <a href="#clases" className="text-black hover:text-white hover:bg-black px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg transform hover:scale-105">
+              <a
+                href="#clases"
+                className="text-shark-900 hover:text-white hover:bg-shark-950 px-4 py-2.5 text-sm font-medium transition-all duration-300 rounded-lg transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-shark-800 focus:ring-offset-2"
+              >
                 Clases
               </a>
-              <a href="#equipo" className="text-black hover:text-white hover:bg-black px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg transform hover:scale-105">
+              <a
+                href="#equipo"
+                className="text-shark-900 hover:text-white hover:bg-shark-950 px-4 py-2.5 text-sm font-medium transition-all duration-300 rounded-lg transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-shark-800 focus:ring-offset-2"
+              >
                 Equipo
               </a>
-              <a href="#horarios" className="text-black hover:text-white hover:bg-black px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg transform hover:scale-105">
+              <a
+                href="#horarios"
+                className="text-shark-900 hover:text-white hover:bg-shark-950 px-4 py-2.5 text-sm font-medium transition-all duration-300 rounded-lg transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-shark-800 focus:ring-offset-2"
+              >
                 Horarios
               </a>
-              <a href="#contacto" className="text-black hover:text-white hover:bg-black px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg transform hover:scale-105">
+              <a
+                href="#contacto"
+                className="text-shark-900 hover:text-white hover:bg-shark-950 px-4 py-2.5 text-sm font-medium transition-all duration-300 rounded-lg transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-shark-800 focus:ring-offset-2"
+              >
                 Contacto
               </a>
             </div>
@@ -61,11 +87,21 @@ export default function Header() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-black hover:text-white p-3 rounded-xl transition-all duration-300 transform hover:scale-110 hover:bg-gray-800 hover:shadow-lg focus:outline-none focus:ring-0 active:scale-95 border-none outline-none"
-              style={{ outline: 'none', border: 'none' }}
+              className="text-shark-900 hover:text-white p-3 rounded-xl transition-all duration-300 transform hover:scale-110 hover:bg-shark-950 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-shark-800 active:scale-95"
+              aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+              aria-expanded={isMenuOpen}
             >
-              <svg className="h-6 w-6 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <svg
+                className={`h-6 w-6 transition-transform duration-300 ${isMenuOpen ? 'rotate-90' : ''}`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                {isMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
               </svg>
             </button>
           </div>
@@ -73,21 +109,41 @@ export default function Header() {
       </div>
 
       {isMenuOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
-            <a href="#inicio" className="text-black hover:text-gray-600 block px-3 py-2 text-base font-medium transition-colors duration-300">
+        <div className="md:hidden animate-slide-up">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-shark-200">
+            <a
+              href="#inicio"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-shark-900 hover:bg-shark-100 hover:text-shark-950 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-300"
+            >
               Inicio
             </a>
-            <a href="#clases" className="text-black hover:text-gray-600 block px-3 py-2 text-base font-medium transition-colors duration-300">
+            <a
+              href="#clases"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-shark-900 hover:bg-shark-100 hover:text-shark-950 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-300"
+            >
               Clases
             </a>
-            <a href="#equipo" className="text-black hover:text-gray-600 block px-3 py-2 text-base font-medium transition-colors duration-300">
+            <a
+              href="#equipo"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-shark-900 hover:bg-shark-100 hover:text-shark-950 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-300"
+            >
               Equipo
             </a>
-            <a href="#horarios" className="text-black hover:text-gray-600 block px-3 py-2 text-base font-medium transition-colors duration-300">
+            <a
+              href="#horarios"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-shark-900 hover:bg-shark-100 hover:text-shark-950 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-300"
+            >
               Horarios
             </a>
-            <a href="#contacto" className="text-black hover:text-gray-600 block px-3 py-2 text-base font-medium transition-colors duration-300">
+            <a
+              href="#contacto"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-shark-900 hover:bg-shark-100 hover:text-shark-950 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-300"
+            >
               Contacto
             </a>
             <div className="px-3 pt-4 pb-2 space-y-2">
