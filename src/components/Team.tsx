@@ -6,42 +6,42 @@ import Link from "next/link"
 export default function Team() {
    const teamMembers = [
     {
-      name: "Paco",
+      name: "Francisco Cuneo",
       role: "Head Coach • Mestre",
       specialization: ["Bjj", "No-Gi", "Takedowns"],
       image: "/Profe-Paco.jpg",
       bio: "Profesor principal, especialista en No-Gi y takedowns. Enseña clases de todos los niveles y dirige el equipo de competencia."
     },
     {
-      name: "Lean",
+      name: "Lean Galbusera",
       role: "Profesor • Coach",
       specialization: ["Bjj Avanzado", "Técnica competitiva"],
       image: "https://placehold.co/400x400/c41e3a/fff?text=Lean",
       bio: "Entrenador de avanzados, foco en estrategia y drills de competición."
     },
     {
-      name: "Bianca",
+      name: "Bianca Giannini",
       role: "Profesora • Coach",
       specialization: ["No-Gi All Levels", "Fundamentos"],
       image: "/Profe-Bianca.jpg",
       bio: "Imparte clases accesibles para todos los niveles, con énfasis en la técnica y el aprendizaje progresivo."
     },
     {
-      name: "Lucas",
+      name: "Lucas Galbusera",
       role: "Profesor • Coach",
       specialization: ["No-Gi Avanzados"],
       image: "/Profe-Lucas.jpg",
       bio: "Entrenador de grupos avanzados, trabaja transiciones y sparring técnico."
     },
     {
-      name: "Ceci",
+      name: "Cecilia Velozo",
       role: "Coach • Profesora",
       specialization: ["NOGI Femenino", "Fundamentos"],
       image: "https://placehold.co/400x400/3a5a40/fff?text=Ceci",
       bio: "Lidera las clases femeninas y promueve un ambiente inclusivo y seguro para aprender."
     },
     {
-      name: "Nicolás",
+      name: "Nicolás Anselmo",
       role: "Profesor • Competidor",
       specialization: ["Bjj", "Competición"],
       image: "/Profe-Nico.jpg",
