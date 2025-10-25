@@ -559,7 +559,7 @@ export default function Schedule() {
           })}
         </div>
 
-        {/* LEGEND */}
+     
         <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
           {Object.keys(typeColorMap).map((type) => (
             <div key={type} className="flex items-center gap-2">
@@ -573,7 +573,7 @@ export default function Schedule() {
           ))}
         </div>
 
-        {/* CTA / info */}
+        
         <div className="mt-8 bg-black text-white rounded-lg p-6 text-center">
           <h3 className="text-xl font-bold mb-2">
             Clases especiales los sábados

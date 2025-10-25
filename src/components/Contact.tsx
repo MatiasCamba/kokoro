@@ -26,6 +26,7 @@ export default function Contact() {
   };
 
   return (
+    // TODO VALIDAR CON YUP Y APLICAR FORMIK
     <section id="contacto" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
@@ -239,7 +240,7 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Map Section */}
+        {/* Mapa */}
         <div className="mt-16">
           <div className="text-center mb-8">
             <h3 className="text-3xl font-bold text-black mb-4">
@@ -265,7 +266,7 @@ export default function Contact() {
               ></iframe>
             </div>
 
-            {/* Map Info Overlay */}
+     
             <div className="p-6 bg-gradient-to-r from-gray-50 to-white">
               <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
                 <div className="text-center sm:text-left">
@@ -335,7 +336,7 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Transportation Info */}
+    
           <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-gray-100">
               <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
